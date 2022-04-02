@@ -1,24 +1,37 @@
+
 import java.util.List;
+import java.util.ArrayList;
 
-public class Banco {
+    public class Banco {
 
-	private String nome;
-	private List<Conta> contas;
+        private String nome;
+        private List<Conta> contas = new ArrayList<>();
 
-	public String getNome() {
-		return nome;
-	}
+        public Banco (String nome) {
+            this.nome = nome;
+        }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+        public Banco () { }
 
-	public List<Conta> getContas() {
-		return contas;
-	}
+        public String getNome() {
+            return nome;
+        }
 
-	public void setContas(List<Conta> contas) {
-		this.contas = contas;
-	}
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
 
-}
+        public List<Conta> getContas() {
+            return contas;
+        }
+
+        public void setContas(List<Conta> contas) {
+            this.contas = contas;
+        }
+
+        public void adicionarConta(Conta conta) {
+            this.contas.add(conta);
+        }
+
+    }
+

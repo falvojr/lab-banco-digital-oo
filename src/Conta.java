@@ -1,52 +1,65 @@
 
-public abstract class Conta implements IConta {
-	
-	private static final int AGENCIA_PADRAO = 1;
-	private static int SEQUENCIAL = 1;
 
-	protected int agencia;
-	protected int numero;
-	protected double saldo;
-	protected Cliente cliente;
+    public abstract  class Conta implements IConta {
 
-	public Conta(Cliente cliente) {
-		this.agencia = Conta.AGENCIA_PADRAO;
-		this.numero = SEQUENCIAL++;
-		this.cliente = cliente;
-	}
+        private static final String AGENCIA_PADRAO = "001";
+        private static int SEQUENCIAL = 1;
 
-	@Override
-	public void sacar(double valor) {
-		saldo -= valor;
-	}
+        protected String agencia;
+        protected int numero;
+        protected double saldo;
+        protected Cliente cliente;
+        protected String type;
 
-	@Override
-	public void depositar(double valor) {
-		saldo += valor;
-	}
+        public Conta(Cliente cliente, String type) {
+            this.agencia = Conta.AGENCIA_PADRAO;
+            this.numero = SEQUENCIAL++;
+            this.cliente = cliente;
+            this.type = type;
+        }
 
-	@Override
-	public void transferir(double valor, IConta contaDestino) {
-		this.sacar(valor);
-		contaDestino.depositar(valor);
-	}
+        @Override
+        public void sacar(double valor) {
+            saldo -= valor;
+        }
 
-	public int getAgencia() {
-		return agencia;
-	}
+        @Override
+        public void depositar(double valor) {
+            saldo += valor;
+        }
 
-	public int getNumero() {
-		return numero;
-	}
+        @Override
+        public void transferir(double valor, IConta contaDestino) {
+            this.sacar(valor);
+            contaDestino.depositar(valor);
+        }
 
-	public double getSaldo() {
-		return saldo;
-	}
+        public String getType() {
+            return this.type;
+        }
 
-	protected void imprimirInfosComuns() {
-		System.out.println(String.format("Titular: %s", this.cliente.getNome()));
-		System.out.println(String.format("Agencia: %d", this.agencia));
-		System.out.println(String.format("Numero: %d", this.numero));
-		System.out.println(String.format("Saldo: %.2f", this.saldo));
-	}
-}
+        public String getAgencia() {
+            return this.agencia;
+        }
+
+        public int getNumero() {
+            return this.numero;
+        }
+
+        public double getSaldo() {
+            return this.saldo;
+        }
+
+        protected void imprimirExtratoConta() {
+            System.out.printf("Titular: %s\n", this.cliente.getNome());
+            System.out.printf("Tipo de Conta: %s\n", this.getType());
+            System.out.printf("Agencia: %s\n", this.getAgencia());
+            System.out.printf("Numero da Conta: %d\n", this.getNumero());
+            System.out.printf("Saldo: %.2f%n\n\n", this.getSaldo());
+        }
+
+        protected void listarContas() {
+            System.out.printf("Titular: %s | Tipo de Conta: %s | Agencia: %s | Mumero da Conta: %d\n", this.cliente.getNome(), this.getType(), this.getAgencia(), this.getNumero());
+        }
+
+    }
