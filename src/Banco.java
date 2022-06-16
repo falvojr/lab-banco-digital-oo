@@ -23,13 +23,13 @@ public class Banco {
 	
 	public void imprimirInfosBanco() {
 		System.out.println("========Informações do Banco========");
-		System.out.println(nome);
+		System.out.println("Nome do Banco: " + nome);
 		for (Conta conta : contas) {
 			System.out.println("*********************");
-			System.out.println("Cliente " + conta.cliente);
-			System.out.println("Agência " + conta.agencia);
-			System.out.println("Numero da Conta " + conta.numero);
-			System.out.println("Saldo " + conta.saldo);
+			System.out.println("Cliente: " + conta.cliente);
+			System.out.println("Agência: " + conta.agencia);
+			System.out.println("Numero da Conta: " + conta.numero);
+			System.out.println("Saldo: " + conta.saldo);
 		}
 	}
 

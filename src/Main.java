@@ -22,10 +22,14 @@ public class Main {
 		
 		cc.imprimirExtrato();
 		poupanca.imprimirExtrato();
+		
+		System.out.println();
+		banco1.imprimirInfosBanco();
+		
+		System.out.println();
+		System.out.println("====Acessando informações do Banco por toString====");
 		System.out.println(banco1.getContas());
 		System.out.println(banco1);
-		
-		banco1.imprimirInfosBanco();
 	}
 
 }
