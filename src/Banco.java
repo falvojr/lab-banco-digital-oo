@@ -20,5 +20,24 @@ public class Banco {
 	public void setContas(List<Conta> contas) {
 		this.contas = contas;
 	}
+	
+	public void imprimirInfosBanco() {
+		System.out.println("========Informações do Banco========");
+		System.out.println(nome);
+		for (Conta conta : contas) {
+			System.out.println("*********************");
+			System.out.println("Cliente " + conta.cliente);
+			System.out.println("Agência " + conta.agencia);
+			System.out.println("Numero da Conta " + conta.numero);
+			System.out.println("Saldo " + conta.saldo);
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Banco [nome=" + nome + ", contas=" + contas + "]";
+	}
+
+	
 
 }
