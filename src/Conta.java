@@ -17,7 +17,8 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void sacar(double valor) {
-		saldo -= valor;
+		if(valor > saldo)System.out.println("Saldo maior que o valor, não é possivel sacar.");
+		else saldo -= valor;
 	}
 
 	@Override
@@ -27,7 +28,9 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void transferir(double valor, IConta contaDestino) {
-		this.sacar(valor);
+		if(valor > saldo)System.out.println("Saldo maior que o valor, não é possivel sacar.");
+		else this.sacar(valor);
+		
 		contaDestino.depositar(valor);
 	}
 
