@@ -1,3 +1,4 @@
+package com.example.lab_banco_digital_oo;
 
 public class ContaCorrente extends Conta {
 
@@ -10,5 +11,5 @@ public class ContaCorrente extends Conta {
 		System.out.println("=== Extrato Conta Corrente ===");
 		super.imprimirInfosComuns();
 	}
-	
+
 }
