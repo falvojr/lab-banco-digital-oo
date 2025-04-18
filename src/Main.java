@@ -5,7 +5,7 @@ public class Main {
 		Cliente venilton = new Cliente();
 		venilton.setNome("Venilton");
 		
-		Conta cc = new ContaCorrente(venilton);
+		Conta cc = new ContaCorrente(venilton, 3000);
 		Conta poupanca = new ContaPoupanca(venilton);
 
 		cc.depositar(100);
@@ -14,5 +14,4 @@ public class Main {
 		cc.imprimirExtrato();
 		poupanca.imprimirExtrato();
 	}
-
 }
