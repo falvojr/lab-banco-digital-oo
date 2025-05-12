@@ -1,11 +1,11 @@
 
 public interface IConta {
 	
-	void sacar(double valor);
+	Boolean sacar(double valor);
 	
-	void depositar(double valor);
+	Boolean depositar(double valor);
 	
-	void transferir(double valor, IConta contaDestino);
+	Boolean transferir(double valor, IConta contaDestino);
 	
-	void imprimirExtrato();
+	void  imprimirExtrato();
 }

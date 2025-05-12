@@ -1,18 +1,16 @@
-# Criando um Banco Digital com Java e Orientação a Objetos
+# Melhorias aplicadas com base em POO
 
-## 02/08/2021 - [Mentoria #1: Tire Suas Dúvidas Sobre Orientação a Objetos](https://www.youtube.com/watch?v=YS6ouOhkyNI)
+### Interface IConta
+Uso de boolean torna o contrato mais claro, evitando ambiguidade e problemas com valores nulos.
 
-Desafio: Considerando nosso conhecimento no domínio bancário, iremos abstrair uma solução Orientada a Objetos em Java. Para isso, vamos interpretar o seguinte cenário:
-“Um banco oferece aos seus clientes dois tipos de contas (corrente e poupança), as quais possuem as funcionalidades de depósito, saque e transferência (entre contas da própria instituição).”
+### Classe Conta
+Atualização das assinaturas garante alinhamento com a interface, elimina avisos do compilador e melhora a robustez.
 
-### Abstração
-Habilidade de concentrar-se nos aspectos essenciais de um domínio, ignorando características menos importantes ou acidentais. Nesse contexto, objetos são abstrações de entidades existentes no domínio em questão.
+### Padronização
+manter métodos idênticos entre interface e implementação facilita manutenção e evolução do código.
 
-### Encapsulamento
-Encapsular significa esconder a implementação dos objetos, criando assim interfaces de uso mais concisas e fáceis de usar/entender. O encapsulamento favorece principalmente dois aspectos de um sistema: a manutenção e a evolução.
+### Resumo
+As alterações reforçam os pilares da Programação Orientada a Objetos — abstração, encapsulamento e polimorfismo — resultando em um código mais limpo, seguro e sustentável.
 
-### Herança
-Permite que você defina uma classe filha que reutiliza (herda), estende ou modifica o comportamento de uma classe pai. A classe cujos membros são herdados é chamada de classe base. A classe que herda os membros da classe base é chamada de classe derivada.
-
-### Polimorfismo
-Capacidade de um objeto poder ser referenciado de várias formas, ou seja, é capacidade de tratar objetos criados a partir das classes específicas como objetos de uma classe genérica. Cuidado, polimorfismo não quer dizer que o objeto fica se transformando, muito pelo contrário, um objeto nasce de um tipo e morre daquele tipo, o que pode mudar é a maneira como nos referimos a ele.
+### Autor das alterações
+Thiago F.S Dias
