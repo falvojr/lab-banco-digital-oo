@@ -1,3 +1,7 @@
+import Cliente.Cliente;
+import Cliente.Conta;
+import Cliente.ContaPoupanca;
+import Cliente.ContaCorrente;
 
 public class Main {
 
@@ -13,6 +17,9 @@ public class Main {
 		
 		cc.imprimirExtrato();
 		poupanca.imprimirExtrato();
+
+		cc.mostrarHistoricoDeTransferencia();
+		poupanca.mostrarHistoricoDeTransferencia();
 	}
 
 }

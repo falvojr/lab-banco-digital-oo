@@ -1,3 +1,7 @@
+package Cliente;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Conta implements IConta {
 	
@@ -8,6 +12,7 @@ public abstract class Conta implements IConta {
 	protected int numero;
 	protected double saldo;
 	protected Cliente cliente;
+	protected List<String> historicoTransacao = new ArrayList<>();
 
 	public Conta(Cliente cliente) {
 		this.agencia = Conta.AGENCIA_PADRAO;
@@ -18,19 +23,26 @@ public abstract class Conta implements IConta {
 	@Override
 	public void sacar(double valor) {
 		saldo -= valor;
+		historicoTransacao.add("Saque do valor de: " + valor);
 	}
 
 	@Override
 	public void depositar(double valor) {
 		saldo += valor;
+		historicoTransacao.add("Deposito do valor de: " + valor);
 	}
 
 	@Override
 	public void transferir(double valor, IConta contaDestino) {
 		this.sacar(valor);
 		contaDestino.depositar(valor);
+		historicoTransacao.add("Transferenica para: " + contaDestino.nomeDoTipoDaConta() + " no valor de: " + valor);
 	}
 
+	protected  void mostrarHistorico()
+	{
+		historicoTransacao.forEach(transacao -> System.out.println(transacao));
+	}
 	public int getAgencia() {
 		return agencia;
 	}
