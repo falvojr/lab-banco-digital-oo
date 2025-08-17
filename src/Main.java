@@ -2,7 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		Cliente venilton = new Cliente();
+		Cliente venilton = new Cliente("Venilton");
 		venilton.setNome("Venilton");
 		
 		Conta cc = new ContaCorrente(venilton);
