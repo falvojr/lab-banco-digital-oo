@@ -13,6 +13,10 @@ public class Main {
 		
 		cc.imprimirExtrato();
 		poupanca.imprimirExtrato();
+
+        cc.mostrarHistoricoDeTransferencia();
+        poupanca.mostrarHistoricoDeTransferencia();
+
 	}
 
 }
